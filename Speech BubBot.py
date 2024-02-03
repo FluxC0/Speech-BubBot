@@ -1,22 +1,23 @@
-import discord 
+import discord
 import random
 from discord.ext import commands
-
-TARGETID = input("what userID should i reply to with speech bubbles?")
-token = input("what is the token of the bot?")
+import tkinter as tk
 
 intents = discord.Intents.default()
 client = commands.Bot(command_prefix='!', intents=intents)
 
-@client.event
-async def on_ready():
-    print(f'Logged in as {client.user}')
-    
-@client.event
-async def on_message(message):
-    if message.author.id == int(TARGETID):
-      # Add responses in here. make sure you make the gif links strings and add commas to the end to define it as a list.
-      responses = ['https://tenor.com/view/purble-place-purble-purple-speech-bubble-chungus-gif-26240224',
+def start_bot():
+    target_id = TARGETIDtxt.get()
+    bot_token = tokentxt.get()
+
+    @client.event
+    async def on_ready():
+        print(f'Logged in as {client.user}')
+
+    @client.event
+    async def on_message(message):
+        if message.author.id == int(target_id):
+             responses = ['https://tenor.com/view/purble-place-purble-purple-speech-bubble-chungus-gif-26240224',
       'https://tenor.com/view/spongefly-speech-bubble-gif-26113306',
       'https://tenor.com/view/lego-island-brickster-discord-speech-bubble-gif-25986049',
       "https://tenor.com/view/boy-kisser-boykisser-boy-kisser-type-type-typing-gif-4348094406361571449",
@@ -33,22 +34,24 @@ async def on_message(message):
       'https://tenor.com/view/goobysart-speech-bubble-boykisser-mauzymice-anti-furry-gif-6769248524556738224',
       "https://tenor.com/view/mauzymice-cat-gif-27575020",
       'https://tenor.com/view/speechbubble-discord-i-am-inside-your-gif-25941808'
-      
-      
-      
-                  
-                  
-                  
-                  
-        
-                  
-                  
-                  
-                  
-                  
-                  
-        ]
-      response = random.choice(responses)
-      await message.channel.send(response)
-# ADD TOKEN HERE! BOT WILL NOT FUNCTION WITHOUT A BOT TOKEN!!!!  
-client.run(token)
+                # Add more responses here
+            ]
+        response = random.choice(responses)
+        await message.channel.send(response)
+
+    client.run(bot_token)
+
+root = tk.Tk()
+
+TARGETIDtxt = tk.Entry(root)
+tokentxt = tk.Entry(root)
+labela = tk.Label(root, text="What is the ID you intend to Target?")
+labelb = tk.Label(root, text="What is the Bot Token Used?")
+buttona = tk.Button(root, text="Start Bot", command=start_bot)
+
+labela.pack()
+TARGETIDtxt.pack()
+labelb.pack()
+tokentxt.pack()
+buttona.pack()
+root.mainloop()
