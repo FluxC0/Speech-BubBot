@@ -43,12 +43,15 @@ def start_bot():
 
 root = tk.Tk()
 
-TARGETIDtxt = tk.Entry(root)
-tokentxt = tk.Entry(root)
-labela = tk.Label(root, text="What is the ID you intend to Target?")
-labelb = tk.Label(root, text="What is the Bot Token Used?")
-buttona = tk.Button(root, text="Start Bot", command=start_bot)
-
+TARGETIDtxt = tk.Entry(root, bg="#353839",fg="#5865F2")
+tokentxt = tk.Entry(root, bg="#353839",fg="#5865F2")
+labela = tk.Label(root, text="What is the ID you intend to Target?",bg="#0e1111",fg="#5865F2")
+labelb = tk.Label(root, text="What is the Bot Token Used?",bg="#0e1111",fg="#5865F2")
+buttona = tk.Button(root, text="Start Bot", command=start_bot,)
+buttona.config(background="#353839",foreground="#5865F2")
+root.config(background="#0e1111")
+root.title("Speech BubBot")
+root.geometry("200x100")
 labela.pack()
 TARGETIDtxt.pack()
 labelb.pack()
