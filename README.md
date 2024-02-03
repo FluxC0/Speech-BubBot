@@ -1,5 +1,5 @@
 # Speech BubBot
-A discord bot that consistently messages a certain UserID with a selected list of speech bubble gifs.
+A discord bot that consistently messages a certain UserID with a selected list of speech bubble gifs when the targeted user sends a message.
 
 
 ## Prerequisites
