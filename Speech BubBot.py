@@ -33,7 +33,15 @@ def start_bot():
       'https://tenor.com/view/nerd-nerd-emoji-meme-speech-bubble-bubble-gif-25115885',
       'https://tenor.com/view/goobysart-speech-bubble-boykisser-mauzymice-anti-furry-gif-6769248524556738224',
       "https://tenor.com/view/mauzymice-cat-gif-27575020",
-      'https://tenor.com/view/speechbubble-discord-i-am-inside-your-gif-25941808'
+      'https://tenor.com/view/speechbubble-discord-i-am-inside-your-gif-25941808',
+      'https://tenor.com/view/peter-griffin-peter-griffing-gt-peter-gt-el-moxxas-gif-26067433',
+      'https://tenor.com/view/text-bubble-gif-25667436',
+      'https://tenor.com/view/dentedhead-speech-bubble-hldmbrnet-gif-25216740',
+      'https://tenor.com/view/police-help-speech-bubble-text-box-gif-25019475',
+      'https://tenor.com/view/speech-bubble-gif-27609617',
+      'https://tenor.com/view/boy-kisser-boykisser-boy-kisser-speech-bubble-boykisser-speech-bubble-speech-bubble-gif-4169251036245788516',
+      'https://tenor.com/view/nerding-speech-bubble-pepe-nerd-gif-26077806',
+      'https://tenor.com/view/i-am-a-surgeon-dr-han-the-good-doctor-discord-bubble-discord-speech-bubble-gif-1845193550933450334'
                 # Add more responses here
             ]
         response = random.choice(responses)
@@ -43,16 +51,19 @@ def start_bot():
 
 root = tk.Tk()
 
-TARGETIDtxt = tk.Entry(root)
-tokentxt = tk.Entry(root)
-labela = tk.Label(root, text="What is the ID you intend to Target?")
-labelb = tk.Label(root, text="What is the Bot Token Used?")
-buttona = tk.Button(root, text="Start Bot", command=start_bot)
+TARGETIDtxt = tk.Entry(root, bg="#353839",fg="#5865F2",font=('Arial', 10, 'bold'))
+tokentxt = tk.Entry(root, bg="#353839",fg="#5865F2",font=('Arial', 10, 'bold'))
+labela = tk.Label(root, text="What is the ID you intend to Target?",bg="#0e1111",fg="#5865F2",font=('Arial', 10, 'bold'))
+labelb = tk.Label(root, text="What is the Bot Token Used?",bg="#0e1111",fg="#5865F2",font=('Arial', 10, 'bold'))
+buttona = tk.Button(root, text="Start Bot", command=start_bot, borderwidth=2, relief="solid", font=('Arial', 10, 'bold'))
+buttona.config(background="#353839", foreground="#5865F2", padx=10, pady=5)
 
+root.config(background="#0e1111")
+root.title("Speech BubBot")
+root.geometry("200x100")
 labela.pack()
 TARGETIDtxt.pack()
 labelb.pack()
 tokentxt.pack()
 buttona.pack()
 root.mainloop()
-#test for changes and pull requests. this can be ignored, will be removed in the next normal commit.
